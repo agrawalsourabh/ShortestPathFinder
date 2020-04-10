@@ -1,0 +1,19 @@
+{% block content %}
+<div class="my-container">
+    <div class="grid-cont">
+        <table class="table table-bordered table-hover-cells">
+            <tbody>
+                {% for i in range(22) %}
+                <tr>
+                    {% for j in range(50) %}
+                    <td class="tableCell" id={{i}}{{j}} onclick="cellClicked({{i}}, {{j}})">
+                    </td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock%}
