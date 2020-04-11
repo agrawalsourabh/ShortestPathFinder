@@ -21,3 +21,21 @@ body {
 .table-hover-cells>tbody>tr>td:hover {
     background-color: #e9e6e6;
 }
+
+p.dropdown-item {
+    margin: auto;
+}
+
+p.dropdown-item:hover {
+    cursor: pointer;
+    background-color: rgb(52, 58, 64);
+    color: white;
+}
+
+span.disable-links {
+    pointer-events: none;
+}
+
+.disbale {
+    font-size: 50px;
+}

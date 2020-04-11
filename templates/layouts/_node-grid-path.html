@@ -1,13 +1,15 @@
 {% block content %}
 <div class="my-container">
     <div class="grid-cont">
+        <div>
+            <p>Dijksta's path</p>
+        </div>
         <table class="table table-bordered table-hover-cells">
             <tbody>
                 {% for i in range(22) %}
                 <tr>
                     {% for j in range(50) %}
-                    <td class="tableCell" id={{i}}{{j}} onclick="cellClicked({{i}}, {{j}})">
-                        {{i}}{{j}}
+                    <td class="tableCell" id={{i}}{{j}}>
                     </td>
                     {% endfor %}
                 </tr>
@@ -16,4 +18,9 @@
         </table>
     </div>
 </div>
+<script>
+    $(function() {
+        console.log(result);
+    });
+</script>
 {% endblock%}

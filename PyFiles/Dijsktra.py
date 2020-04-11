@@ -1,4 +1,4 @@
-from PyFiles.Graph import MyGraph
+from .Graph import MyGraph
 
 
 def dijsktra(graph, initial, endNode):

@@ -23,3 +23,14 @@ function cellClicked(i, j) {
         }
     }
 }
+
+function dropdown_item_clicked(btn_text) {
+    $("#run_btn").html("Run " + btn_text).prop("disabled", false);
+}
+
+
+// $(function() {
+//     $("#run_btn").click(function() {
+
+//     });
+// });

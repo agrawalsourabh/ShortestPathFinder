@@ -1,4 +1,4 @@
-from PyFiles.Graph import MyGraph
+from .Graph import MyGraph
 
 
 # Class to create a graph with given number of rows and column of the grid
