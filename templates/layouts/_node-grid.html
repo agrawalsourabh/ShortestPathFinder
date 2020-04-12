@@ -3,13 +3,12 @@
     <div class="grid-cont">
         <table class="table table-bordered table-hover-cells">
             <tbody>
-                {% for i in range(22) %}
+                {% set id = namespace(value=0) %} {% for i in range(22) %}
                 <tr>
                     {% for j in range(50) %}
-                    <td class="tableCell" id={{i}}{{j}} onclick="cellClicked({{i}}, {{j}})">
-                        {{i}}{{j}}
+                    <td class=" tableCell " id={{id.value}} onclick="cellClicked({{id.value}}) ">
                     </td>
-                    {% endfor %}
+                    {% set id.value = id.value + 1 %} {% endfor %}
                 </tr>
                 {% endfor %}
             </tbody>

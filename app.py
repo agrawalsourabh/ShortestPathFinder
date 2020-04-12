@@ -9,12 +9,12 @@ pFinder = PathFinder.PathFinder()
 def home():
     return render_template('home.html')
 
-@app.route('/Dijkstra')
-def dijkstra():
-    path_edge = pFinder.find_dijsktra_path(initial='00', endNode='2040')
+@app.route('/Dijkstra/<starting_node>/<ending_node>')
+def dijkstra(starting_node, ending_node):
+    shortest_path, visited = pFinder.find_dijsktra_path(initial=starting_node, endNode=ending_node)
     # res = {node: '0' for node in path}
    
-    return render_template("home-path.html", result=path_edge, initial='00', endNode='2040')
+    return render_template("home-path.html", shortest_path = shortest_path, visited=visited, initial=starting_node, endNode=ending_node)
 
 if __name__ == '__main__':
     app.run(debug=True)

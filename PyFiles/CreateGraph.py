@@ -20,24 +20,35 @@ class createGraph:
     #  Add all nodes of the Graph g.
     def add_all_nodes(self, g):
         print("Creating nodes...")
+        id = 0
         for row in range(self.rows):
             for col in range(self.columns):
-                g.add_node(str(row) + str(col))
+                g.add_node(str(id))
+                id = id + 1
 
         print("Nodes Created.")
 
     # Add all the edges of the Graph g
     def add_all_edges(self, g):
         print("Inserting edges...")
-        #  adding all horizontal edges (adding row wise)
-        for i in range(self.rows):
-            for j in range(self.columns - 1):
-                g.add_edge(fromNode=str(i) + str(j), toNode=str(i) + str(j + 1), value=1)
+        
+        total_nodes = self.rows * self.columns
+        e = 1
 
-        #  adding all vertical edges (adding column wise)
-        for j in range(self.columns):
-            for i in range(self.rows - 1):
-                g.add_edge(fromNode=str(i) + str(j), toNode=str(i + 1) + str(j), value=1)
+        # adding edges horizontally
+        for node in range(total_nodes-1):
+            
+            if e != self.columns:
+                g.add_edge(fromNode=str(node), toNode=str(node+1), value=1)
+                e = e + 1
+            else:
+                e = 1
+
+        # e = 1
+        total_nodes = self.columns * (self.rows - 1)
+        # adding edges vertically
+        for node in range(total_nodes):
+            g.add_edge(fromNode=str(node), toNode=str(node+self.columns), value=1)
 
         print("Edges inserted.")
 

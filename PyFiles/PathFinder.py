@@ -13,14 +13,18 @@ class PathFinder:
         self.graph = self.cGraph.getGraph()
 
     def find_dijsktra_path(self, initial, endNode):
-        visited, path, path_edge = dijsktra(graph=self.graph, initial=initial, endNode=endNode)
+
 
         # print("Visited:", visited)
         # print("Path:", path)
         # print("Path with Edged:", path_edge)
 
-        return visited
+        return dijsktra(graph=self.graph, initial=initial, endNode=endNode)
 
 
-# p = PathFinder()
-# p.find_dijsktra_path(initial='00', endNode='20')
+# print("Visited: ")
+# print(visited)
+# print("Path: ")
+# print(path)
+# print("Path Edge: ")
+# print(path_edge)

@@ -17,23 +17,25 @@
     {% include "layouts/_navbar.html" %} {% block content %} {% endblock %}
     <div class="my-container">
         <div class="grid-cont">
+
             <table class="table table-bordered table-hover-cells">
+
                 <tbody>
-                    {% for i in range(22) %}
+                    {% set id = namespace(value=0) %} {% for i in range(22) %}
                     <tr>
-                        {% for j in range(50) %} {% if i|string + j|string in result.keys() %} {% if i|string + j|string == initial %}
-                        <td class="tableCell" id={{i}}{{j}} style="background-color: rgb(53, 155, 146);">
+                        {% for j in range(50) %} {% if id.value|string in shortest_path %} {% if id.value|string == initial %}
+                        <td class="tableCell" id={{id.value}} style="background-color:#B2DFDB;">
                         </td>
                         {% else %}
-                        <td class="tableCell" id={{i}}{{j}} style="background-color: darkkhaki;">
+                        <td class="tableCell" id={{id.value}} style="background-color: #00BFA5;">
                         </td>
-                        {% endif %} {% elif i|string + j|string == endNode %}
-                        <td class="tableCell" id={{i}}{{j}} style="background-color: rgb(197, 34, 69);">
+                        {% endif %} {% elif id.value|string == endNode %}
+                        <td class="tableCell" id={{id.value}} style="background-color: #00695C;">
                         </td>
                         {% else %}
-                        <td class="tableCell" id={{i}}{{j}}>
+                        <td class="tableCell" id={{id.value}}>
                         </td>
-                        {% endif %} {% endfor %}
+                        {% endif %} {% set id.value = id.value + 1 %} {% endfor %}
                     </tr>
                     {% endfor %}
                 </tbody>

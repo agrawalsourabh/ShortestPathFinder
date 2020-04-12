@@ -1,4 +1,17 @@
-from .Graph import MyGraph
+from queue import LifoQueue
+
+
+def shortest_path_s_d(initial, endNode, path_edge):
+    shortest_path = []
+    previous_node = endNode
+    while 1:
+        shortest_path.append(path_edge[previous_node])
+        previous_node = path_edge[previous_node]
+
+        if previous_node == initial:
+            break
+
+    return shortest_path
 
 
 def dijsktra(graph, initial, endNode):
@@ -33,7 +46,9 @@ def dijsktra(graph, initial, endNode):
         if endNode in visited:
             break
 
-    return visited, path, path_edge
+    shortest_path = shortest_path_s_d(initial, endNode, path_edge)
+
+    return shortest_path, visited
 
 # # creating graph
 # # and initializing nodes and edges
