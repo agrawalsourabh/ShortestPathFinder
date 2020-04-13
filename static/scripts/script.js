@@ -41,7 +41,16 @@ function dropdown_item_clicked(btn_text) {
         console.log(url);
         $('#run_btn').attr('data-target', url);
     } else {
-        alert("Select nodes first");
+        // alert("Select nodes first");
+        console.log("inside else");
+        // $('.alert').css({
+        //     'display': 'block'
+        // });
+
+        // alert("msge");
+        $(".alert-p p").css({
+            'color': '#80CBC4'
+        });
     }
 }
 

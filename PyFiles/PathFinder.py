@@ -9,7 +9,7 @@ class PathFinder:
     graph = None
 
     def __init__(self):
-        self.cGraph = createGraph(rows=22, cols=50)
+        self.cGraph = createGraph(rows=18, cols=50)
         self.graph = self.cGraph.getGraph()
 
     def find_dijsktra_path(self, initial, endNode):

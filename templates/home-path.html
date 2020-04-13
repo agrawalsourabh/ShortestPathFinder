@@ -9,40 +9,55 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/main.css') }}" type="text/css">
-    <!-- <script src="{{ url_for('static', filename='scripts/script-path.js') }}"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet/home-path-style.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='scripts/script-path.js') }}"></script>
 </head>
 
 <body>
     {% include "layouts/_navbar.html" %} {% block content %} {% endblock %}
     <div class="my-container">
-        <div class="grid-cont">
+        <div class="row">
+            <div class="alert-p col-xs-6">
+                <p> Distance from Source to Destination is <strong>{{distance}} units.</strong></p>
+            </div>
+            <div class="legends col-xs-6">
+                <div class="row">
+                    <div class="row legend-A col-xs-6">
+                        <div class="color-box-A col-xs-6"></div>
+                        <p>Source</p>
+                    </div>
+                    <div class="row legend-B col-xs-6">
+                        <div class="color-box-B col-xs-6"></div>
+                        <p>Destination</p>
+                    </div>
+                    <div class="row legend-C col-xs-6">
+                        <div class="color-box-C col-xs-6"></div>
+                        <p>Visited</p>
+                    </div>
+                </div>
+            </div>
 
-            <table class="table table-bordered table-hover-cells">
+            <div class="grid-cont">
+                <table class="table table-bordered table-hover-cells">
 
-                <tbody>
-                    {% set id = namespace(value=0) %} {% for i in range(22) %}
-                    <tr>
-                        {% for j in range(50) %} {% if id.value|string in shortest_path %} {% if id.value|string == initial %}
-                        <td class="tableCell" id={{id.value}} style="background-color:#B2DFDB;">
-                        </td>
-                        {% else %}
-                        <td class="tableCell" id={{id.value}} style="background-color: #00BFA5;">
-                        </td>
-                        {% endif %} {% elif id.value|string == endNode %}
-                        <td class="tableCell" id={{id.value}} style="background-color: #00695C;">
-                        </td>
-                        {% else %}
-                        <td class="tableCell" id={{id.value}}>
-                        </td>
-                        {% endif %} {% set id.value = id.value + 1 %} {% endfor %}
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                    <tbody>
+                        {% set id = namespace(value=0) %} {% for i in range(18) %}
+                        <tr>
+                            {% for j in range(50) %}
+                            <td class="tableCell" id={{id.value}}>
+                            </td>
+                            {% set id.value = id.value + 1 %} {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
 </body>
+
+<script>
+    visited_cells('{{visited|tojson}}', '{{shortest_path|tojson}}', '{{initial}}', '{{endNode}}');
+</script>
 
 </html>

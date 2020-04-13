@@ -29,6 +29,15 @@ ul>li>a:hover {
     color: #004D40;
 }
 
+ul>li>a#navbarDropdown {
+    color: #E0F2F1;
+}
+
+ul>li>a#navbarDropdown:hover {
+    /* color: #004D40; */
+    cursor: default;
+}
+
 p.dropdown-item {
     margin: auto;
     color: #26A69A;
@@ -69,7 +78,8 @@ p.dropdown-item:hover {
 .grid-cont {
     width: 100%;
     height: 100%;
-    margin: auto;
+    margin-left: 15px;
+    margin-right: 15px;
     /* position: relative; */
     padding: 2%;
     background-color: white;
@@ -104,7 +114,7 @@ span.disable-links {
 }
 
 .alert-p>p {
-    color: white;
+    color: red;
     padding-top: 0;
     padding-left: 40px;
 }
