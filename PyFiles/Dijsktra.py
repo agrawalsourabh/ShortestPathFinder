@@ -18,6 +18,8 @@ def dijsktra(graph, initial, endNode):
     visited = {initial: 0}
     path = set()
     path_edge = {}
+    traverse = []
+    traverse.append(initial)
 
     nodes = set(graph.nodes)
 
@@ -40,6 +42,7 @@ def dijsktra(graph, initial, endNode):
             weight = current_weight + graph.getDistance(min_node, edge)
             if edge not in visited or weight < visited[edge]:
                 visited[edge] = weight
+                traverse.append(edge)
                 path_edge[edge] = min_node
                 path.add(min_node)
 
@@ -48,7 +51,7 @@ def dijsktra(graph, initial, endNode):
 
     shortest_path = shortest_path_s_d(initial, endNode, path_edge)
 
-    return shortest_path, visited
+    return shortest_path[::-1], visited, traverse
 
 # # creating graph
 # # and initializing nodes and edges

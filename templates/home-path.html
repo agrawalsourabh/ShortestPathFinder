@@ -17,7 +17,7 @@
     {% include "layouts/_navbar.html" %} {% block content %} {% endblock %}
     <div class="my-container">
         <div class="row">
-            <div class="alert-p col-xs-6">
+            <div class="alert-p col-xs-6" style="visibility: hidden;">
                 <p> Distance from Source to Destination is <strong>{{distance}} units.</strong></p>
             </div>
             <div class="legends col-xs-6">
@@ -33,6 +33,10 @@
                     <div class="row legend-C col-xs-6">
                         <div class="color-box-C col-xs-6"></div>
                         <p>Visited</p>
+                    </div>
+                    <div class="row legend-D col-xs-6">
+                        <div class="color-box-D col-xs-6"></div>
+                        <p>Shortest Path</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +61,7 @@
 </body>
 
 <script>
-    visited_cells('{{visited|tojson}}', '{{shortest_path|tojson}}', '{{initial}}', '{{endNode}}');
+    visited_cells('{{visited|tojson}}', '{{shortest_path|tojson}}', '{{initial}}', '{{endNode}}', '{{traverse|tojson}}');
 </script>
 
 </html>
