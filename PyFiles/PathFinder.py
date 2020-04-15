@@ -1,5 +1,7 @@
 from .CreateGraph import createGraph
 from .Dijsktra import dijsktra
+from .AStar import astar
+
 
 
 # from Graph_Data.Algorithms import Dijsktra
@@ -14,12 +16,11 @@ class PathFinder:
 
     def find_dijsktra_path(self, initial, endNode):
 
-
-        # print("Visited:", visited)
-        # print("Path:", path)
-        # print("Path with Edged:", path_edge)
-
         return dijsktra(graph=self.graph, initial=initial, endNode=endNode)
+
+    def find_astar_path(self, initial, endNode):
+        return astar(graph=self.graph, start_node=initial, end_node=endNode)
+
 
 
 # print("Visited: ")

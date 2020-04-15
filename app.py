@@ -13,8 +13,17 @@ def home():
 def dijkstra(starting_node, ending_node):
     shortest_path, visited, traverse = pFinder.find_dijsktra_path(initial=starting_node, endNode=ending_node)
     # res = {node: '0' for node in path}
-   
+    # return traverse
     return render_template("home-path.html", shortest_path = shortest_path, distance=len(shortest_path), visited=visited, initial=starting_node, endNode=ending_node, traverse=traverse)
+
+
+@app.route('/Astar/<starting_node>/<ending_node>')
+def astar(starting_node, ending_node):
+    shortest_path, traverse = pFinder.find_astar_path(initial=starting_node, endNode=ending_node)
+    # res = {node: '0' for node in path}
+    # return traverse
+    return render_template("home-path.html", shortest_path = shortest_path, distance=len(shortest_path), visited=None, initial=starting_node, endNode=ending_node, traverse=traverse)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -3,7 +3,8 @@ var colors = {
     end_node_color: '#00695C',
     visited_node_color: '#64FFDA',
     short_path_node_color: '#00BFA5',
-    message_color: '#80CBC4'
+    message_color: '#80CBC4',
+    current_node_color: '#FF7043'
 };
 
 var window = [];
@@ -37,8 +38,6 @@ function visited_cells(visited, shortest_path, initial, endNode, traverse) {
             highlight_shortest_path(shortest_path, initial, endNode);
             setTimeout(display_message, time_delay);
         }, time_delay);
-
-
 
     }, 0);
 
@@ -103,9 +102,13 @@ function highlight_traverse(traverse, initial, endNode) {
             });
         } else {
             // change_cell_bg_color(id, colors.short_path_node_color);
+            setTimeout(function() {
+                change_cell_bg_color(id, colors.current_node_color);
+            }, time_delay);
+
             window["reload_timer"] = setTimeout(function() {
                 change_cell_bg_color(id, colors.visited_node_color);
-            }, time_delay);
+            }, time_delay + 20);
         }
         i = i + 1;
         // time_delay = time_delay + 1;
