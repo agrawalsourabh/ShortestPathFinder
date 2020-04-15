@@ -4,7 +4,7 @@ Shortest Path Finder is a web based application to visualise the shortest path b
 
 ## Table of Contents:
 * [Description](#Description)
-* [Path Finding Algorithms](#Path Finding Algorithms)
+* [Path Finding Algorithms](#Path-Finding-Algorithms)
 * [Technologies](#Technologies)
 
 ## Description: <br>
