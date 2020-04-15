@@ -6,9 +6,10 @@ Shortest Path Finder is a web based application to visualise the shortest path b
 * [Description](#Description)
 * [Path Finding Algorithms](#Path-Finding-Algorithms)
 * [Technologies](#Technologies)
+* [Screenprints](#Screenprints)
 
 ## Description: <br>
-This web based application allows the user to select anyone of the two popular path finding algorithms to find the shortest path and the shortest distance between the source and destination node and also highlights all the visited nodes.
+This web based application allows the user to select anyone of the two popular path finding algorithms to find the shortest path and the shortest distance between the source and destination node and it also highlights all the visited nodes.
 
 ## Path Finding Algorithms:
 * Dijkstra algorithm
@@ -23,5 +24,6 @@ This web based application allows the user to select anyone of the two popular p
 * CSS
 * HTML
 
+## Screenprints
 
 
