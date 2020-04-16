@@ -30,9 +30,9 @@ This web based application allows the user to select anyone of the two popular p
 
 <br>
 
-**Dijkstra**
+### Dijkstra
 ![image](https://user-images.githubusercontent.com/8282374/79354109-99f4de00-7f59-11ea-8760-9e218496e587.png)
 
-**Astar**
+### Astar
 ![image](https://user-images.githubusercontent.com/8282374/79354200-ba249d00-7f59-11ea-94a4-a49678cf07f3.png)
 
