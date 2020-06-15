@@ -9,10 +9,26 @@ from .AStar import astar
 class PathFinder:
     cGraph = None
     graph = None
+    rows = None
+    columns = None
+   
 
-    def __init__(self):
-        self.cGraph = createGraph(rows=18, cols=50)
+    def set_rows(self, rows):
+        self.rows = rows
+
+    def set_columns(self, columns):
+        self.columns = columns
+
+    def get_rows(self):
+        return  self.rows
+    
+    def get_columns(self):
+        return self.columns
+
+    def createGraph(self):
+        self.cGraph = createGraph(rows=self.get_rows(), cols=self.get_columns())
         self.graph = self.cGraph.getGraph()
+
 
     def find_dijsktra_path(self, initial, endNode):
 

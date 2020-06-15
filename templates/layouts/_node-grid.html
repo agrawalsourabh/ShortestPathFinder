@@ -1,34 +1,5 @@
 {% block content %}
 <div class="my-container">
-    <!-- <div class="row">
-        <div class="alert-p col-xs-6" style="visibility: hidden;">
-            <p> <strong>Hey!</strong> you should select source and destination nodes first.</p>
-        </div>
-
-        <div class="legends col-xs-6">
-            <div class="row">
-                <div class="row legend-A col-xs-6">
-                    <div class="color-box-A col-xs-6"></div>
-                    <p>Source</p>
-                </div>
-                <div class="row legend-B col-xs-6">
-                    <div class="color-box-B col-xs-6"></div>
-                    <p>Destination</p>
-                </div>
-
-                <div class="row legend-C col-xs-6">
-                    <div class="color-box-C col-xs-6"></div>
-                    <p>Visited</p>
-                </div>
-
-                <div class="row legend-D col-xs-6">
-                    <div class="color-box-D col-xs-6"></div>
-                    <p>Shortest Path</p>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
 
     <div class="flex-container">
         <div class="left">
@@ -64,9 +35,9 @@
     <div class="grid-cont">
         <table class="table table-bordered table-hover-cells">
             <tbody>
-                {% set id = namespace(value=0) %} {% for i in range(18) %}
+                {% set id = namespace(value=0) %} {% for i in range({{rows}}) %}
                 <tr>
-                    {% for j in range(50) %}
+                    {% for j in range({{columns}}) %}
                     <td class=" tableCell " id={{id.value}} onclick="cellClicked({{id.value}}) ">
                     </td>
                     {% set id.value = id.value + 1 %} {% endfor %}
