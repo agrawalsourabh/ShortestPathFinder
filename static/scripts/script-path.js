@@ -21,7 +21,7 @@ function display_message() {
     $(".alert-p").css({
         'visibility': 'visible'
     });
-    $(".alert-p p").css({
+    $(".alert-p").css({
         'color': colors.message_color
     });
 }

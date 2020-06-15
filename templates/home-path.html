@@ -16,47 +16,54 @@
 <body>
     {% include "layouts/_navbar.html" %} {% block content %} {% endblock %}
     <div class="my-container">
-        <div class="row">
-            <div class="alert-p col-xs-6" style="visibility: hidden;">
-                <p> Distance from Source to Destination is <strong>{{distance}} units.</strong></p>
+        <div class="flex-container">
+            <div class="left">
+                <p class="alert-p"> <strong>Hey!</strong> you should select source and destination nodes first.</p>
             </div>
-            <div class="legends col-xs-6">
-                <div class="row">
-                    <div class="row legend-A col-xs-6">
-                        <div class="color-box-A col-xs-6"></div>
-                        <p>Source</p>
+            <div class="right">
+                <div class="source">
+                    <div class="source-box">
+
                     </div>
-                    <div class="row legend-B col-xs-6">
-                        <div class="color-box-B col-xs-6"></div>
-                        <p>Destination</p>
+                    <p>Source</p>
+                </div>
+                <div class="destination">
+                    <div class="destination-box">
+
                     </div>
-                    <div class="row legend-C col-xs-6">
-                        <div class="color-box-C col-xs-6"></div>
-                        <p>Visited</p>
+                    <p>Destination </p>
+                </div>
+                <div class="visited">
+                    <div class="visited-box">
+
                     </div>
-                    <div class="row legend-D col-xs-6">
-                        <div class="color-box-D col-xs-6"></div>
-                        <p>Shortest Path</p>
+                    <p>Visited</p>
+                </div>
+                <div class="shortest-path">
+                    <div class="shortest-path-box">
+
                     </div>
+                    <p>Shortest path</p>
                 </div>
             </div>
-
-            <div class="grid-cont">
-                <table class="table table-bordered table-hover-cells">
-
-                    <tbody>
-                        {% set id = namespace(value=0) %} {% for i in range(18) %}
-                        <tr>
-                            {% for j in range(50) %}
-                            <td class="tableCell" id={{id.value}}>
-                            </td>
-                            {% set id.value = id.value + 1 %} {% endfor %}
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
         </div>
+
+        <div class="grid-cont">
+            <table class="table table-bordered table-hover-cells">
+
+                <tbody>
+                    {% set id = namespace(value=0) %} {% for i in range(18) %}
+                    <tr>
+                        {% for j in range(50) %}
+                        <td class="tableCell" id={{id.value}}>
+                        </td>
+                        {% set id.value = id.value + 1 %} {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 </body>
 
