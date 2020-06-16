@@ -37,6 +37,10 @@ class PathFinder:
     def find_astar_path(self, initial, endNode):
         return astar(graph=self.graph, start_node=initial, end_node=endNode)
 
+    def delete_graph(self):
+        if self.cGraph is not None:
+            self.cGraph.deleteGraph()
+
 
 
 # print("Visited: ")

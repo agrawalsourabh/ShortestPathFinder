@@ -67,3 +67,7 @@ class createGraph:
     # get the graph created
     def getGraph(self):
         return self.g
+
+    def deleteGraph(self):
+        self.g.delAllEdges()
+        self.g.delAllNodes()

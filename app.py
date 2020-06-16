@@ -8,7 +8,6 @@ app = Flask(__name__)
 # rows = 30 
 # columns = 12 
 
-
 pFinder = PathFinder.PathFinder()
 
 def getDesktopRowsAndCols():
@@ -25,21 +24,13 @@ is_mobile_view_selected = False
 
 @app.route('/')
 def home():
-    # form = BasicForm()
-    # if form.validate_on_submit():
-        
-    #     rows, columns = getDesktopRowsAndCols()
-    #     pFinder.set_rows(rows=rows)
-    #     pFinder.set_columns(columns=columns)
-    #     pFinder.createGraph()
-    #     return render_template('home_new.html',rows=rows, columns=columns)
-
     return render_template('index.html')
     
 
 @app.route('/mobile')
 def openMobileView():
     rows, columns = getMobileRowsAndCols()
+    pFinder.delete_graph()
     pFinder.set_rows(rows=rows)
     pFinder.set_columns(columns=columns)
     pFinder.createGraph()
@@ -53,6 +44,8 @@ def openMobileView():
 @app.route('/desktop')
 def openDesktopView():
     rows, columns = getDesktopRowsAndCols()
+
+    pFinder.delete_graph()
     pFinder.set_rows(rows=rows)
     pFinder.set_columns(columns=columns)
     pFinder.createGraph()

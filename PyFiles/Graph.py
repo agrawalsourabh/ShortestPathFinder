@@ -30,3 +30,10 @@ class MyGraph:
     def getEdges(self, fromNode):
         return self.edges[fromNode]
 
+    def delAllNodes(self):
+        self.nodes.clear()
+
+    def delAllEdges(self):
+        self.distances.clear()
+        self.edges.clear()
+
