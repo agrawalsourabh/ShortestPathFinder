@@ -2,8 +2,6 @@ from flask import Flask, render_template
 from PyFiles import PathFinder
 from collections import defaultdict
 
-from Forms.form import BasicForm
-
 app = Flask(__name__)
 # rows = 30 
 # columns = 12 
