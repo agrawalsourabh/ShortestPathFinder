@@ -83,4 +83,4 @@ def astar(starting_node, ending_node):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
