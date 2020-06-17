@@ -16,8 +16,8 @@ def getDesktopRowsAndCols():
     return rows, columns
 
 def getMobileRowsAndCols():
-    rows = 30 
-    columns = 12
+    rows = 18 
+    columns = 10
     return rows, columns
 
 is_mobile_view_selected = False
