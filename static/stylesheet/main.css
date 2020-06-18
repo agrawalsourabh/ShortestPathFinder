@@ -244,6 +244,7 @@ div.shortest-path>p {
     }
     .left>p.alert-p {
         visibility: hidden;
+        margin: auto;
     }
     .flex-container>div.right {
         width: 50%;
