@@ -1,6 +1,7 @@
 # Shortest Path Finding Visualiser
 
-Shortest Path Finding Visualiser is a web based application which visualises the Dijkstra's and Astar's shortest path finding algorithm.
+[Shortest Path Finding Visualiser] (https://shortest-path-finder.herokuapp.com/) is a web based application which visualises the Dijkstra's and Astar's shortest path finding algorithm.
+
 
 ## Table of Contents:
 * [Description](#Description)
