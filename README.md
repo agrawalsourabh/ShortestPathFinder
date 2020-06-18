@@ -1,6 +1,6 @@
-# Shortest Path Finder
+# Shortest Path Finding Visualiser
 
-Shortest Path Finder is a web based application to visualise the shortest path between the two points.
+Shortest Path Finding Visualiser is a web based application which visualises the Dijkstra's and Astar's shortest path finding algorithm.
 
 ## Table of Contents:
 * [Description](#Description)
@@ -9,7 +9,7 @@ Shortest Path Finder is a web based application to visualise the shortest path b
 * [Screenprints](#Screenprints)
 
 ## Description: <br>
-This web based application allows the user to select anyone of the two popular path finding algorithms to find the shortest path between the source and destination node and it also highlights all the visited nodes.
+This web based application allows the user to select anyone of the two popular shortest path finding algorithms to find the shortest path between the source and destination node and it also highlights all the visited nodes.
 
 ## Path Finding Algorithms:
 * Dijkstra algorithm
